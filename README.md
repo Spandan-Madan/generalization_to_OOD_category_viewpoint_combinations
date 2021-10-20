@@ -1,4 +1,4 @@
-# generalization_biased_category_po
+# Overview
 
 Code for project on understanding the capability of CNNs to generalize to out-of-distribution category-viewpoint combinations.
  
