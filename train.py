@@ -68,7 +68,7 @@ GPU = 1
 if 'ilab' in DATASET_NAME:
     NUM_CLASSES = (6,6,6,6)
 else:
-    NUM_CLASSES = (5,5,4,5)
+    NUM_CLASSES = (5,5,5,5)
 
 
 model = get_model(ARCH,NUM_CLASSES)
