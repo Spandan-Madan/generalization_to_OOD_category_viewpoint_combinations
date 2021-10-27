@@ -10,3 +10,4 @@ train and process dataset_lists.ipynb
 accuracies/
 logs/
 saved_models/
+losses/
