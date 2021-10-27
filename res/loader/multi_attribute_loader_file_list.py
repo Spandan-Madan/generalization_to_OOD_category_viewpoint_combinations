@@ -10,6 +10,9 @@ import sys
 import numpy as np
 import torch
 
+project_root = os.getcwd()
+data_root = "%s/data"%project_root
+
 def make_dataset(list_file):
         images = []
         labels = []
@@ -19,7 +22,7 @@ def make_dataset(list_file):
 
         for line in lines:
             image = line.rstrip()
-            images.append(image)
+            images.append("%s/%s"%(data_root,image))
             label = image.replace('images/frame','labels/label_frame')
             labels.append(label)
 
@@ -57,15 +60,14 @@ class FileListFolder(data.Dataset):
         """
 
         impath = self.samples[index]
-        if 'om2' in impath:
-            impath = impath.replace('/om2/user/smadan/car_dataset/','/data/graphics/toyota-pytorch/biased_dataset_generalization/datasets/')
-        if 'om5' in impath:
-            impath = impath.replace('/om5/user/smadan/car_dataset/','/data/graphics/toyota-pytorch/biased_dataset_generalization/datasets/')
-        sample_label = self.attributes[impath]
-        
+        #if 'om2' in impath:
+        #    impath = impath.replace('/om2/user/smadan/car_dataset/','/data/graphics/toyota-pytorch/biased_dataset_generalization/datasets/')
+        #if 'om5' in impath:
+        #    impath = impath.replace('/om5/user/smadan/car_dataset/','/data/graphics/toyota-pytorch/biased_dataset_generalization/datasets/')
+        sample_label = self.attributes[impath.split('/')[-1]]
         label_path = impath.replace('images/frame','labels/label_frame')
 
-        impath = impath.replace('/data/graphics/toyota-pytorch/biased_dataset_generalization/datasets/','/om5/user/smadan/car_dataset/')
+        #impath = impath.replace('/data/graphics/toyota-pytorch/biased_dataset_generalization/datasets/','/om5/user/smadan/car_dataset/')
         sample = Image.open(impath)
         
         

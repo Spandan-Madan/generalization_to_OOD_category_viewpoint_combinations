@@ -20,7 +20,7 @@ import argparse
 import pickle
 import sys
 
-sys.path.append("../../res/")
+sys.path.append("res/")
 from models.models import get_model
 from loader.loader import get_loader
 
@@ -31,10 +31,12 @@ parser.add_argument("--batch_size", type=int)
 parser.add_argument("--arch", type=str)
 parser.add_argument("--save_file_suffix", type=str)
 parser.add_argument("--start_checkpoint_path", type=str)
-parser.add_argument("--task", type=srt, default="combined")
+parser.add_argument("--task", type=str, default="combined")
 args = parser.parse_args()
 
-
+with open('args.p','wb') as F:
+    pickle.dump(args, F)
+    
 print(args, flush=True)
 sys.stdout.flush()
 DATASET_NAME = args.dataset_name
@@ -102,13 +104,14 @@ if "ilab" in DATASET_NAME:
 else:
     loader_new = get_loader("multi_attribute_loader_file_list")
 
-file_list_root = "/om5/user/smadan/dataset_lists_openmind"
-att_path = "/om5/user/smadan/dataset_lists/combined_attributes.p"
-
-# loader_new = get_loader('multi_attribute_loader_file_list_ilab')
-# file_list_root = '/data/graphics/toyota-pytorch/biased_dataset_generalization/dataset_lists'
-# #att_path = '/data/graphics/toyota-pytorch/biased_dataset_generalization/dataset_lists/merged_colors_binned_attribute.p'
-# att_path = '/data/graphics/toyota-pytorch/biased_dataset_generalization/dataset_lists/combined_attributes.p'
+if "ilab" in DATASET_NAME:
+    loader_new = get_loader("multi_attribute_loader_file_list_ilab")
+    file_list_root = "dataset_lists/ilab_lists/"
+elif "rotation_model" in DATASET_NAME:
+    loader_new = get_loader("multi_attribute_loader_file_list")
+    file_list_root = "dataset_lists/biased_cars_lists/"
+    
+att_path = "dataset_lists/att_dict_simplified.p"
 shuffles = {"train": True, "val": True, "test": False}
 
 

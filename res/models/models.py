@@ -9,7 +9,7 @@ import torchvision
 print(os.getcwd())
 # print(models)
 def get_model(MODEL_ARCH,NUM_CLASSES):
-   if MODEL_ARCH == 'RESNET18':
+    if MODEL_ARCH == 'RESNET18':
         import torchvision
         from torchvision.models import resnet18
         import torch.nn as nn
