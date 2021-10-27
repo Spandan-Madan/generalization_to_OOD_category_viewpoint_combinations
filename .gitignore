@@ -11,3 +11,4 @@ accuracies/
 logs/
 saved_models/
 losses/
+res/models/__pycache__/
