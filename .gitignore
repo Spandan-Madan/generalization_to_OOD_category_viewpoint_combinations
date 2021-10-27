@@ -7,3 +7,6 @@ res/.ipynb_checkpoints
 dataset_lists_unprocessed/
 args.p
 train and process dataset_lists.ipynb
+accuracies/
+logs/
+saved_models/
