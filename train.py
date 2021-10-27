@@ -34,8 +34,16 @@ parser.add_argument("--start_checkpoint_path", type=str)
 parser.add_argument("--task", type=str, default="combined")
 args = parser.parse_args()
 
-with open('args.p','wb') as F:
-    pickle.dump(args, F)
+def create_folder(fol):
+    if not os.path.isdir(fol):
+        os.mkdir(fol)
+
+create_folder("saved_models")
+create_folder("accuracies")
+create_folder("logs")
+
+#with open('args.p','wb') as F:
+#    pickle.dump(args, F)
     
 print(args, flush=True)
 sys.stdout.flush()
