@@ -10,6 +10,9 @@ import sys
 import numpy as np
 import torch
 
+project_root = os.getcwd()
+data_root = "%s/data"%project_root
+
 def get_image_attributes(imfile):
     parts = imfile.split('.')[0].split('-')
     category = parts[0]
@@ -33,7 +36,8 @@ def make_dataset(list_file):
 
         for line in lines:
             image = line.rstrip()
-            images.append(image)
+            images.append("%s/%s"%(data_root,image))
+#             images.append(image)
             label = image
             labels.append(label)
 
@@ -77,7 +81,7 @@ class FileListFolder(data.Dataset):
         impath = self.samples[index]
         label_path = impath
 
-        impath = impath.replace('om2','om5')
+#         impath = impath.replace('om2','om5')
         sample = Image.open(impath)
         imname = impath.split('/')[-1]
         

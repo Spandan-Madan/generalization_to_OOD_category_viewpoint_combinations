@@ -12,3 +12,4 @@ logs/
 saved_models/
 losses/
 res/models/__pycache__/
+res/loader/__pycache__/
