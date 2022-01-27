@@ -1,7 +1,7 @@
 <div align="center">
 <h3>When and How CNNs generalize to out-of-distribution category-viewpoint combinations.</h3>
   <img src="docs/images/fig_1_github.png" alt="Teaser Figure">
-  <a href="#Project Overview">Overview</a> •
+  <a href="#overview">Overview</a> •
   <a href="#findings">Findings</a> •
   <a href="#datasets">Datasets</a> •
   <a href="#citation">Citation</a> •
@@ -25,7 +25,7 @@ The paper can be accessed [here](https://arxiv.org/abs/2007.08032).
   <a href="https://web.mit.edu/xboix/www/index.html">Xavier Boix</a>
 </div>
 
-# Project Overview
+# Overview
 
 Recent works suggest that convolutional neural networks (CNNs) fail to generalize to out-of-distribution (OOD) category-viewpoint combinations, ie. combinations not seen during training. In this paper, we investigate when and how such OOD generalization may be possible, and identifying the neural mechanisms that facilitate such OOD generalization.
 
