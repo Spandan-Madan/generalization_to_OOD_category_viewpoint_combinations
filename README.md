@@ -16,15 +16,15 @@ The paper can be accessed [here](https://arxiv.org/abs/2007.08032).
 <div align="center">
 <h3>Authors</h3>
   <!-- <img src="docs/images/fig_1_github.png" alt="Teaser Figure"> -->
-  <a href="#about">Spandan Madan</a> •
-  <a href="#about">Timothy Henry</a> •
-  <a href="#about">Jamell Dozier</a> •
-  <a href="#about">Helen Ho</a> •
-  <a href="#about">Nishchal Bhandari</a> •
-  <a href="#about">Tomotake Sasaki</a> •
-  <a href="#about">Frédo Durand</a> •
-  <a href="#about">Hanspeter Pfister</a> •
-  <a href="#about">Xavier Boix</a>
+  <a href="http://people.fas.harvard.edu/~spm253/spandan/">Spandan Madan</a> •
+  <a href="#Project Overview">Timothy Henry</a> •
+  <a href="#Project Overview">Jamell Dozier</a> •
+  <a href="#Project Overview">Helen Ho</a> •
+  <a href="#Project Overview">Nishchal Bhandari</a> •
+  <a href="https://cbmm.mit.edu/about/people/sasaki">Tomotake Sasaki</a> •
+  <a href="https://people.csail.mit.edu/fredo/">Frédo Durand</a> •
+  <a href="https://vcg.seas.harvard.edu/people/hanspeter-pfister">Hanspeter Pfister</a> •
+  <a href="https://web.mit.edu/xboix/www/index.html">Xavier Boix</a>
 </div>
 # Project Overview
 Recent works suggest that convolutional neural networks (CNNs) fail to generalize to out-of-distribution (OOD) category-viewpoint combinations, ie. combinations not seen during training. In this paper, we investigate when and how such OOD generalization may be possible, and identifying the neural mechanisms that facilitate such OOD generalization.
