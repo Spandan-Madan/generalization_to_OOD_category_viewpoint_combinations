@@ -43,7 +43,7 @@ Our key findings are as follows:
 
 # Datasets
 
-## Biased-Cars Dataset
+## Biased-Cars: A photo-realist, complex dataset for OOD analysis
 
 We introduce a challenging, photo-realistic dataset for analyzing out-of-distribution performance in computer vision: the Biased-Cars dataset. Our dataset offers complete control over the joint distribution of categories, viewpoints, and other scene parameters, and the use of physically based rendering ensures photo-realism. Some features of our dataset:
 
@@ -53,7 +53,7 @@ We introduce a challenging, photo-realistic dataset for analyzing out-of-distrib
 
 - Labels for several computer vision tasks: We provide labels for car model, color, viewpoint and scale. We also provide semantic label maps for background categories including road, sky, pavement, pedestrians, trees and buildings.
 
-Our dataset can be downloaded[here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/F1NQ3R).
+Our dataset can be downloaded [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/F1NQ3R).
 
 For ease, an example showing loading and training with the Biased-Cars dataset has been provided under tutorials.
 
@@ -72,3 +72,4 @@ For ease, an example showing loading and training with the Biased-Cars dataset h
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+
