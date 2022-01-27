@@ -1,10 +1,8 @@
 # Overview
 
 <div align="center">
-  <img src="docs/images/fig_1_github.png" alt="BigPictureNet">
-
-  <h4>When and How CNNs generalize to out-of-distribution category-viewpoint combinations.</h4>
-
+<h3>When and How CNNs generalize to out-of-distribution category-viewpoint combinations.</h3>
+  <img src="docs/images/fig_1_github.png" alt="Teaser Figure">
   <!-- <a href="#about">About</a> • -->
   <!-- <a href="#crtnet-model">CRTNet Model</a> •
   <a href="#code-architecture">Code Architecture</a> •
