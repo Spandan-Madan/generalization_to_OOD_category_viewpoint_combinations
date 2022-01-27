@@ -1,15 +1,11 @@
 <div align="center">
 <h3>When and How CNNs generalize to out-of-distribution category-viewpoint combinations.</h3>
   <img src="docs/images/fig_1_github.png" alt="Teaser Figure">
-  <!-- <a href="#about">About</a> • -->
-  <!-- <a href="#crtnet-model">CRTNet Model</a> • -->
-  <!-- <a href="#code-architecture">Code Architecture</a> • -->
   <a href="#datasets">Datasets</a> •
-  <!-- <a href="#mturk-experiments">Mturk Experiments</a> • -->
+  <a href="#findings">Findings</a> •
   <a href="#citation">Citation</a> •
-  <!-- <a href="#notes">Notes</a> • -->
-  <!-- <a href="#license">License</a> -->
 </div>
+
 This repository contains the official implementation of our paper published in Nature Machine Intelligence: *When and how convolutional neural networks generalize to out-of-distribution category and viewpoint combinations*. Here you can find the code, and the newly introduced Biased-Cars dataset.
 
 The paper can be accessed [here](https://arxiv.org/abs/2007.08032).
@@ -18,10 +14,10 @@ The paper can be accessed [here](https://arxiv.org/abs/2007.08032).
 <h3>Authors</h3>
   <!-- <img src="docs/images/fig_1_github.png" alt="Teaser Figure"> -->
   <a href="http://people.fas.harvard.edu/~spm253/spandan/">Spandan Madan</a> •
-  <a href="#Project Overview">Timothy Henry</a> •
-  <a href="#Project Overview">Jamell Dozier</a> •
-  <a href="#Project Overview">Helen Ho</a> •
-  <a href="#Project Overview">Nishchal Bhandari</a> •
+  <a href="https://cbmm.mit.edu/about/people/henry">Timothy Henry</a> •
+  <a href="https://cbmm.mit.edu/about/people/dozier">Jamell Dozier</a> •
+  <a href="https://superurop.mit.edu/scholars/helen-ho/">Helen Ho</a> •
+  <a href="https://www.linkedin.com/in/nishchalb/">Nishchal Bhandari</a> •
   <a href="https://cbmm.mit.edu/about/people/sasaki">Tomotake Sasaki</a> •
   <a href="https://people.csail.mit.edu/fredo/">Frédo Durand</a> •
   <a href="https://vcg.seas.harvard.edu/people/hanspeter-pfister">Hanspeter Pfister</a> •
@@ -33,6 +29,16 @@ The paper can be accessed [here](https://arxiv.org/abs/2007.08032).
 Recent works suggest that convolutional neural networks (CNNs) fail to generalize to out-of-distribution (OOD) category-viewpoint combinations, ie. combinations not seen during training. In this paper, we investigate when and how such OOD generalization may be possible, and identifying the neural mechanisms that facilitate such OOD generalization.
 
 We show that increasing the number of in-distribution combinations (ie. data diversity) substantially improves generalization to OOD combinations, even with the same amount of training data. We compare learning category and viewpoint in separate and shared network architectures, and observe starkly different trends on in-distribution and OOD combinations, ie. while shared networks are helpful in-distribution, separate networks significantly outperform shared ones at OOD combinations. Finally, we demonstrate that such OOD generalization is facilitated by the neural mechanism of specialization, ie. the emergence of two types of neurons -- neurons selective to category and invariant to viewpoint, and vice versa.
+
+# Findings
+
+Our key findings are as follows:
+
+- For a constant dataset size, increasing data diversity makes the task more challenging, as reflected in the deteriorating in-distribution perfor- mance. Yet, increasing data diversity substantially improves performance on OOD combi- nations.
+
+- Stark contrast in in-distribution and OOD performances: Separate architectures significantly outperform shared ones on OOD combinations, eventhough they can lead to marginal drop in in-distribution performance. Thus, the belief that Shared architectures outperform Separate ones when tasks are synergistic should be revisited (Caruana, 1997), as their relative performance strongly depends on whether the test sample is in-distribution or OOD.
+
+- Neural specialization (proposed in our paper) facilitates generalization to OOD combinations for multi-task prediction of category and viewpoint prediction. We show the emergence of two types of neurons, one driving OOD generalization for category, and the other for view- point. This corresponds to neurons selective to a category and invariant to viewpoint, and vice versa. We show that the CNN generalization behavior trends correlates with the degree of specialization of the neurons.
 
 
 # Datasets
