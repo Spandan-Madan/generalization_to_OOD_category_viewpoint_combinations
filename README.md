@@ -14,15 +14,29 @@ This repository contains the official implementation of our paper published in N
 
 The paper can be accessed [here](https://arxiv.org/abs/2007.08032).
 
-## Project Overview
+# Project Overview
 Recent works suggest that convolutional neural networks (CNNs) fail to generalize to out-of-distribution (OOD) category-viewpoint combinations, ie. combinations not seen during training. In this paper, we investigate when and how such OOD generalization may be possible, and identifying the neural mechanisms that facilitate such OOD generalization.
 
 We show that increasing the number of in-distribution combinations (ie. data diversity) substantially improves generalization to OOD combinations, even with the same amount of training data. We compare learning category and viewpoint in separate and shared network architectures, and observe starkly different trends on in-distribution and OOD combinations, ie. while shared networks are helpful in-distribution, separate networks significantly outperform shared ones at OOD combinations. Finally, we demonstrate that such OOD generalization is facilitated by the neural mechanism of specialization, ie. the emergence of two types of neurons -- neurons selective to category and invariant to viewpoint, and vice versa.
 
 
-## Datasets
+# Datasets
 
-- Biased-Cars: https://drive.google.com/file/d/10cKaEYCPvt3pltK8T7fFhmHzRRVo4rW7/view?usp=sharing
+## Biased-Cars Dataset
+
+We introduce a challenging, photo-realistic dataset for analyzing out-of-distribution performance in computer vision: the Biased-Cars dataset. Our dataset offers complete control over the joint distribution of categories, viewpoints, and other scene parameters, and the use of physically based rendering ensures photo-realism. Some features of our dataset:
+
+- Photorealism with diversity: Outdoor scenes with fine control over scene clutter (trees, street furniture, and pedestrians), car colors, object occlusions, diverse backgrounds (building/road textures) and lighting conditions (sky maps).
+
+- Fine grained control: 30K images of five different car models with different car colors seen from different viewpoints car colors varying between 0-90 degrees of azimuth, and 0-50 degrees of zenith across multiple scales.
+
+- Labels for several computer vision tasks: We provide labels for car model, color, viewpoint and scale. We also provide semantic label maps for background categories including road, sky, pavement, pedestrians, trees and buildings.
+
+Our dataset can be downloaded[here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/F1NQ3R).
+
+For ease, an example showing loading and training with the Biased-Cars dataset has been provided under tutorials.
+
+## Other, previously published datasets
 - iLab Dataset: http://ilab.usc.edu/ilab2m/iLab-2M.tar.gz
 - MNIST-Rotation: https://www.dropbox.com/s/wdws3b3fjo190sk/self_generated.tar.gz?dl=0
 - UIUC 3D Dataset: http://www.eecs.umich.edu/vision/data/3Ddataset.zip
