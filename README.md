@@ -13,7 +13,19 @@
 This repository contains the official implementation of our paper published in Nature Machine Intelligence: *When and how convolutional neural networks generalize to out-of-distribution category and viewpoint combinations*. Here you can find the code, and the newly introduced Biased-Cars dataset.
 
 The paper can be accessed [here](https://arxiv.org/abs/2007.08032).
-
+<div align="center">
+<h3>Authors</h3>
+  <!-- <img src="docs/images/fig_1_github.png" alt="Teaser Figure"> -->
+  <a href="#about">Spandan Madan</a> •
+  <a href="#about">Timothy Henry</a> •
+  <a href="#about">Jamell Dozier</a> •
+  <a href="#about">Helen Ho</a> •
+  <a href="#about">Nishchal Bhandari</a> •
+  <a href="#about">Tomotake Sasaki</a> •
+  <a href="#about">Frédo Durand</a> •
+  <a href="#about">Hanspeter Pfister</a> •
+  <a href="#about">Xavier Boix</a>
+</div>
 # Project Overview
 Recent works suggest that convolutional neural networks (CNNs) fail to generalize to out-of-distribution (OOD) category-viewpoint combinations, ie. combinations not seen during training. In this paper, we investigate when and how such OOD generalization may be possible, and identifying the neural mechanisms that facilitate such OOD generalization.
 
@@ -36,7 +48,7 @@ Our dataset can be downloaded[here](https://dataverse.harvard.edu/dataset.xhtml?
 
 For ease, an example showing loading and training with the Biased-Cars dataset has been provided under tutorials.
 
-## Other, previously published datasets
+## Previously published datasets used in our analysis
 - iLab Dataset: http://ilab.usc.edu/ilab2m/iLab-2M.tar.gz
 - MNIST-Rotation: https://www.dropbox.com/s/wdws3b3fjo190sk/self_generated.tar.gz?dl=0
 - UIUC 3D Dataset: http://www.eecs.umich.edu/vision/data/3Ddataset.zip
