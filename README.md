@@ -28,3 +28,12 @@ We show that increasing the number of in-distribution combinations (ie. data div
 - UIUC 3D Dataset: http://www.eecs.umich.edu/vision/data/3Ddataset.zip
 
 ## Citation
+
+@misc{madan2021cnns,
+      title={When and how CNNs generalize to out-of-distribution category-viewpoint combinations},
+      author={Spandan Madan and Timothy Henry and Jamell Dozier and Helen Ho and Nishchal Bhandari and Tomotake Sasaki and Frédo Durand and Hanspeter Pfister and Xavier Boix},
+      year={2021},
+      eprint={2007.08032},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
