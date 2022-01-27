@@ -1,6 +1,7 @@
 <div align="center">
 <h3>When and How CNNs generalize to out-of-distribution category-viewpoint combinations.</h3>
   <img src="docs/images/fig_1_github.png" alt="Teaser Figure">
+  <a href="https://arxiv.org/abs/2007.08032">Paper</a> •
   <a href="#overview">Overview</a> •
   <a href="#findings">Findings</a> •
   <a href="#datasets">Datasets</a> •
