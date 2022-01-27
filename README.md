@@ -3,7 +3,7 @@
 <div align="center">
   <img src="docs/images/fig_1_github.png" alt="BigPictureNet">
 
-  <h4>When and How do convolutional neural networks generalize to out-of-distribution category-viewpoint combinations</h4>
+  <h4>When and How CNNs generalize to out-of-distribution category-viewpoint combinations.</h4>
 
   <!-- <a href="#about">About</a> • -->
   <!-- <a href="#crtnet-model">CRTNet Model</a> •
