@@ -47,6 +47,8 @@ Our key findings are as follows:
 
 ## Biased-Cars: A photo-realistic, complex dataset for OOD generalization
 
+![Biased-Cars samples GIF]("docs/images/biased_cars_samples.gif")
+
 We introduce a challenging, photo-realistic dataset for analyzing out-of-distribution performance in computer vision: the Biased-Cars dataset. Our dataset offers complete control over the joint distribution of categories, viewpoints, and other scene parameters, and the use of physically based rendering ensures photo-realism. Some features of our dataset:
 
 - Photorealism with diversity: Outdoor scenes with fine control over scene clutter (trees, street furniture, and pedestrians), car colors, object occlusions, diverse backgrounds (building/road textures) and lighting conditions (sky maps).
