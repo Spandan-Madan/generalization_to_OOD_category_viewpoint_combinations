@@ -1,4 +1,19 @@
 # Overview
+
+<div align="center">
+  <img src="docs/images/fig_1_github.png" alt="BigPictureNet">
+
+  <h4>The Context-aware Recognition Transformer Network</h4>
+
+  <a href="#about">About</a> •
+  <a href="#crtnet-model">CRTNet Model</a> •
+  <a href="#code-architecture">Code Architecture</a> •
+  <a href="#datasets">Datasets</a> •
+  <a href="#mturk-experiments">Mturk Experiments</a> •
+  <a href="#citation">Citation</a> •
+  <a href="#notes">Notes</a> •
+  <a href="#license">License</a>
+</div>
 This repository contains the official implementation of our paper published in Nature Machine Intelligence: *When and how convolutional neural networks generalize to out-of-distribution category and viewpoint combinations". Here you can find the code, and the newly introduced Biased-Cars dataset.
 
 The paper can be accessed [here](https://arxiv.org/abs/2007.08032).
