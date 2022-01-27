@@ -4,7 +4,7 @@
   <a href="#overview">Overview</a> •
   <a href="#findings">Findings</a> •
   <a href="#datasets">Datasets</a> •
-  <a href="#citation">Citation</a> •
+  <a href="#citation">Citation</a>
 </div>
 
 This repository contains the official implementation of our paper published in Nature Machine Intelligence: *When and how convolutional neural networks generalize to out-of-distribution category and viewpoint combinations*. Here you can find the code, and the newly introduced Biased-Cars dataset.
