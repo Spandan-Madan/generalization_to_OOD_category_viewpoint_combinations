@@ -66,7 +66,7 @@ We show that increasing the number of in-distribution combinations (ie. data div
     python train.py --dataset_name rotation_model_15_compositions_seen --num_epochs 5 --batch_size 50 --arch LATE_BRANCHING_COMBINED --save_file_suffix test_run --task rotation --experiment_out_name biased_cars_test
     ```
 
-    As described in the <a href="#Datasets">datasets</a> section above, --dataset_name can be changed to train/test models with different number of in-distribution combinations for different datasets.
+    As described in the point 2 above, --dataset_name can be changed to train/test models with different number of in-distribution combinations for different datasets.
 
 # Datasets
 
