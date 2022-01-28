@@ -32,6 +32,14 @@ Recent works suggest that convolutional neural networks (CNNs) fail to generaliz
 
 We show that increasing the number of in-distribution combinations (ie. data diversity) substantially improves generalization to OOD combinations, even with the same amount of training data. We compare learning category and viewpoint in separate and shared network architectures, and observe starkly different trends on in-distribution and OOD combinations, ie. while shared networks are helpful in-distribution, separate networks significantly outperform shared ones at OOD combinations. Finally, we demonstrate that such OOD generalization is facilitated by the neural mechanism of specialization, ie. the emergence of two types of neurons -- neurons selective to category and invariant to viewpoint, and vice versa.
 
+Our key findings are as follows:
+
+- For constant dataset size, increasing data diversity substantially improves performance on OOD combinations, despite marginal drop in in-distribution performance.
+
+- `Separate` architectures significantly outperform `Shared` ones on OOD combinations, though they can lead to marginal drop in in-distribution performance.
+
+- Neural specialization (proposed in our paper) facilitates generalization to OOD combinations. We show the emergence of two types of neurons, one driving OOD generalization for category, and the other for viewpoint.
+
 # Using the codebase
 
 1. SETUP: Please use the `requirements.txt` file for dependencies using: `pip install requirements.txt`
@@ -53,20 +61,10 @@ We show that increasing the number of in-distribution combinations (ie. data div
     a. Impact of increasing data diversity on out-of-distribution (OOD) performance: [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/increasing_in_distribution_combinations.ipynb)
 
     b. Performance of `Separate` vs `Shared` architectures on in-distribution and OOD performance: [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/separate_vs_shared.ipynb)
-    
+
     c. Analyzing role of Neural Specialization in facilitating generalization: [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/neural_activity.ipynb)
 
 4. TRAINING:
-# Findings
-
-Our key findings are as follows:
-
-- For a constant dataset size, increasing data diversity makes the task more challenging, as reflected in the deteriorating in-distribution perfor- mance. Yet, increasing data diversity substantially improves performance on OOD combi- nations.
-
-- Stark contrast in in-distribution and OOD performances: Separate architectures significantly outperform shared ones on OOD combinations, eventhough they can lead to marginal drop in in-distribution performance. Thus, the belief that Shared architectures outperform Separate ones when tasks are synergistic should be revisited (Caruana, 1997), as their relative performance strongly depends on whether the test sample is in-distribution or OOD.
-
-- Neural specialization (proposed in our paper) facilitates generalization to OOD combinations for multi-task prediction of category and viewpoint prediction. We show the emergence of two types of neurons, one driving OOD generalization for category, and the other for view- point. This corresponds to neurons selective to a category and invariant to viewpoint, and vice versa. We show that the CNN generalization behavior trends correlates with the degree of specialization of the neurons.
-
 
 # Datasets
 
