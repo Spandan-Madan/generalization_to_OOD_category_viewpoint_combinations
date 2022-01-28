@@ -46,7 +46,7 @@ We show that increasing the number of in-distribution combinations (ie. data div
     ```
     For other datasets, please use other scripts in the `utils` directory.
 
-    b. Understanding data structure:
+    b. Understanding data structure: Data-splits with different number of in-distribution combinations are stored in file lists under `dataset_lists`. Names of train, test, val files describes the number of in-distribution combinations. For instance, setting `dataset_name = rotation_model_15_compositions_seen` would start the experiment for 15/25 in-distribution combinations for the Biased-cars dataset. Similarly, setting it to `ilab_comps_12_seen_shuffled_1` would start the experiment for iLab dataset with 12/36 in-distribution combinations.
 
 3. DEMOS: We provide easy demos which showcase our main experiments. These include:
 
@@ -66,10 +66,7 @@ We show that increasing the number of in-distribution combinations (ie. data div
     python train.py --dataset_name rotation_model_15_compositions_seen --num_epochs 5 --batch_size 50 --arch LATE_BRANCHING_COMBINED --save_file_suffix test_run --task rotation --experiment_out_name biased_cars_test
     ```
 
-
-5. Additional Details:
-
-    All datasets are loaded from file lists located in the `dataset_lists` directory. The names describe the number of in-distribution combinations. These come in triplets with the `train_list`, `test_list` and `val_list`.
+    As described in the <a href="#Datasets">datasets</a> section above, --dataset_name can be changed to train/test models with different number of in-distribution combinations for different datasets.
 
 # Datasets
 
