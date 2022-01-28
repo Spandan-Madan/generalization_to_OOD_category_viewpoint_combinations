@@ -72,23 +72,31 @@ We introduce a challenging, photo-realistic dataset for analyzing out-of-distrib
 
 - Labels for several computer vision tasks: We provide labels for car model, color, viewpoint and scale. We also provide semantic label maps for background categories including road, sky, pavement, pedestrians, trees and buildings.
 
-#### To download the dataset, please use:
+#### To download the dataset:
 
 ```
 cd utils
 bash download_biased_cars.sh
 ```
-Our dataset can be downloaded [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/F1NQ3R).
+Our dataset can also be accessed [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/F1NQ3R).
 
-For ease, an example showing loading and training with the Biased-Cars dataset has been provided under tutorials.
+#### To load, train and test with the dataset:
+
+- We provide easy data loaders present under `res/loader/`.
+
+- For sample of training and testing, please check `demos/using_biased_cars.ipynb`
 
 ## Previously published datasets used in our analysis
+Our paper also provides results with the following public datasets:
 - iLab Dataset: http://ilab.usc.edu/ilab2m/iLab-2M.tar.gz
 - MNIST-Rotation: https://www.dropbox.com/s/wdws3b3fjo190sk/self_generated.tar.gz?dl=0
 - UIUC 3D Dataset: http://www.eecs.umich.edu/vision/data/3Ddataset.zip
 
 ## Citation
 
+To cite our paper, please use the following bibTex:
+
+```
 @misc{madan2021cnns,
       title={When and how CNNs generalize to out-of-distribution category-viewpoint combinations},
       author={Spandan Madan and Timothy Henry and Jamell Dozier and Helen Ho and Nishchal Bhandari and Tomotake Sasaki and Frédo Durand and Hanspeter Pfister and Xavier Boix},
@@ -97,3 +105,4 @@ For ease, an example showing loading and training with the Biased-Cars dataset h
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+```
