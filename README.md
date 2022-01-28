@@ -34,9 +34,7 @@ We show that increasing the number of in-distribution combinations (ie. data div
 
 # Using the codebase
 
-1. SETUP:
-
-    Please use the `requirements.txt` file for dependencies using: `pip install requirements.txt`
+1. SETUP: Please use the `requirements.txt` file for dependencies using: `pip install requirements.txt`
 
 2. DATASETS:
 
@@ -48,9 +46,9 @@ We show that increasing the number of in-distribution combinations (ie. data div
     ```
     b. Understanding data structure:
 
-3. Demos:
+3. DEMOS: We provide easy demos which showcase our main experiments. These include:
 
-    We provide 
+    a. Impact of increasing data diversity on out-of-distribution performance: Please check [here](`demos/https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/increasing_in_distribution_combinations.ipynb`)
 
 # Findings
 
