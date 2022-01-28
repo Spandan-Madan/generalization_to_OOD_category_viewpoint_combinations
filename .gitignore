@@ -13,3 +13,4 @@ saved_models/
 losses/
 res/models/__pycache__/
 res/loader/__pycache__/
+res/loader/__pycache__/multi_attribute_loader_file_list.cpython-38.pyc
