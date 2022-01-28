@@ -37,6 +37,7 @@ We show that increasing the number of in-distribution combinations (ie. data div
 1. SETUP: Please use the `requirements.txt` file for dependencies using: `pip install requirements.txt`
 
 2. DATASETS:
+
     a. Downloading: For every dataset, there is a download script under `utils`. Please use:
 
     ```
