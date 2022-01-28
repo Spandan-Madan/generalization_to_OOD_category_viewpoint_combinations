@@ -39,6 +39,7 @@ def create_folder(fol):
     if not os.path.isdir(fol):
         os.mkdir(fol)
 
+create_folder("outputs")
 create_folder("outputs/%s"%args.experiment_out_name)
 create_folder("outputs/%s/saved_models"%args.experiment_out_name)
 create_folder("outputs/%s/accuracies"%args.experiment_out_name)
