@@ -32,6 +32,21 @@ Recent works suggest that convolutional neural networks (CNNs) fail to generaliz
 
 We show that increasing the number of in-distribution combinations (ie. data diversity) substantially improves generalization to OOD combinations, even with the same amount of training data. We compare learning category and viewpoint in separate and shared network architectures, and observe starkly different trends on in-distribution and OOD combinations, ie. while shared networks are helpful in-distribution, separate networks significantly outperform shared ones at OOD combinations. Finally, we demonstrate that such OOD generalization is facilitated by the neural mechanism of specialization, ie. the emergence of two types of neurons -- neurons selective to category and invariant to viewpoint, and vice versa.
 
+# Using the codebase
+
+1. SETUP: Please use the `requirements.txt` file for dependencies using: `pip install requirements.txt`
+
+2. DATASETS:
+    a. Downloading: For every dataset, there is a download script under `utils`. Please use:
+
+    ```
+    cd utils
+    bash download_biased_cars.sh
+    ```
+    b. Understanding data structure:
+
+3. Accessing data labels:
+
 # Findings
 
 Our key findings are as follows:
@@ -57,6 +72,12 @@ We introduce a challenging, photo-realistic dataset for analyzing out-of-distrib
 
 - Labels for several computer vision tasks: We provide labels for car model, color, viewpoint and scale. We also provide semantic label maps for background categories including road, sky, pavement, pedestrians, trees and buildings.
 
+#### To download the dataset, please use:
+
+```
+cd utils
+bash download_biased_cars.sh
+```
 Our dataset can be downloaded [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/F1NQ3R).
 
 For ease, an example showing loading and training with the Biased-Cars dataset has been provided under tutorials.
@@ -76,4 +97,3 @@ For ease, an example showing loading and training with the Biased-Cars dataset h
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
-
