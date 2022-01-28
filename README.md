@@ -34,7 +34,9 @@ We show that increasing the number of in-distribution combinations (ie. data div
 
 # Using the codebase
 
-1. SETUP: Please use the `requirements.txt` file for dependencies using: `pip install requirements.txt`
+1. SETUP:
+
+    Please use the `requirements.txt` file for dependencies using: `pip install requirements.txt`
 
 2. DATASETS:
 
@@ -46,7 +48,9 @@ We show that increasing the number of in-distribution combinations (ie. data div
     ```
     b. Understanding data structure:
 
-3. Accessing data labels:
+3. Demos:
+
+    We provide 
 
 # Findings
 
