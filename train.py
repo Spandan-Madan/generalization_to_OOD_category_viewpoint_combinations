@@ -29,6 +29,7 @@ parser.add_argument("--dataset_name", type=str)
 parser.add_argument("--num_epochs", type=int)
 parser.add_argument("--batch_size", type=int)
 parser.add_argument("--arch", type=str)
+parser.add_argument("--experiment_out_name", type=str)
 parser.add_argument("--save_file_suffix", type=str)
 parser.add_argument("--start_checkpoint_path", type=str)
 parser.add_argument("--task", type=str, default="combined")
@@ -38,13 +39,14 @@ def create_folder(fol):
     if not os.path.isdir(fol):
         os.mkdir(fol)
 
-create_folder("saved_models")
-create_folder("accuracies")
-create_folder("logs")
+create_folder("outputs/%s"%args.experiment_out_name)
+create_folder("outputs/%s/saved_models"%args.experiment_out_name)
+create_folder("outputs/%s/accuracies"%args.experiment_out_name)
+create_folder("outputs/%s/logs"%args.experiment_out_name)
 
 #with open('args.p','wb') as F:
 #    pickle.dump(args, F)
-    
+
 print(args, flush=True)
 sys.stdout.flush()
 DATASET_NAME = args.dataset_name
@@ -61,7 +63,8 @@ if args.start_checkpoint_path:
 train_file_name = __file__.split(".")[0]
 
 if TASK == "combined":
-    SAVE_FILE = "logs/%s_%s_%s_%s_%s_%s.out" % (
+    SAVE_FILE = "outputs/%s/logs/%s_%s_%s_%s_%s_%s.out" % (
+        args.experiment_out_name,
         train_file_name,
         ARCH,
         DATASET_NAME,
@@ -70,7 +73,8 @@ if TASK == "combined":
         SAVE_FILE_SUFFIX,
     )
 else:
-    SAVE_FILE = "logs/%s_%s_%s_%s_%s_%s_%s.out" % (
+    SAVE_FILE = "outputs/%s/logs/%s_%s_%s_%s_%s_%s_%s.out" % (
+        args.experiment_out_name,
         train_file_name,
         TASK,
         ARCH,
@@ -95,31 +99,28 @@ image_transform = transforms.Compose(
 
 GPU = 1
 
-if "ilab" in DATASET_NAME:
-    NUM_CLASSES = (6, 6, 6, 6)
-else:
-    NUM_CLASSES = (5, 5, 5, 5)
-
-
-model = get_model(ARCH, NUM_CLASSES)
-
 if args.start_checkpoint_path:
     print("Loading from %s" % args.start_checkpoint_path)
     model = torch.load(args.start_checkpoint_path)
 
-if "ilab" in DATASET_NAME:
-    loader_new = get_loader("multi_attribute_loader_file_list_ilab")
-else:
-    loader_new = get_loader("multi_attribute_loader_file_list")
-
+data_dir = "data/"
 if "ilab" in DATASET_NAME:
     loader_new = get_loader("multi_attribute_loader_file_list_ilab")
     file_list_root = "dataset_lists/ilab_lists/"
+    att_path = "dataset_lists/combined_attributes.p"
+    NUM_CLASSES = (6,6,6,6)
+elif "mnist_rotation" in DATASET_NAME:
+    loader_new = get_loader('multi_attribute_loader_file_list_mnist_rotation')
+    file_list_root = "dataset_lists/mnist_rotation_lists/"
+    att_path = "dataset_lists/combined_attributes.p"
+    NUM_CLASSES = (10,10,10,10)
 elif "rotation_model" in DATASET_NAME:
     loader_new = get_loader("multi_attribute_loader_file_list")
     file_list_root = "dataset_lists/biased_cars_lists/"
-    
-att_path = "dataset_lists/att_dict_simplified.p"
+    att_path = "data/biased_cars/att_dict_simplified.p"
+    NUM_CLASSES = (5,5,5,5)
+
+model = get_model(ARCH, NUM_CLASSES)
 shuffles = {"train": True, "val": True, "test": False}
 
 
@@ -130,7 +131,7 @@ dset_loaders = {}
 dset_sizes = {}
 for phase in ["train", "val", "test"]:
     file_lists[phase] = "%s/%s_list_%s.txt" % (file_list_root, phase, DATASET_NAME)
-    dsets[phase] = loader_new(file_lists[phase], att_path, image_transform)
+    dsets[phase] = loader_new(file_lists[phase], att_path, image_transform, data_dir)
     dset_loaders[phase] = torch.utils.data.DataLoader(
         dsets[phase],
         batch_size=BATCH_SIZE,
@@ -280,43 +281,43 @@ for epoch in range(NUM_EPOCHS):
 
 if TASK == "combined":
     with open(
-        "saved_models/%s_model_%s_%s_%s.pt"
-        % (train_file_name, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
+        "outputs/%s/saved_models/%s_model_%s_%s_%s.pt"
+        % (args.experiment_out_name, train_file_name, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
         "wb",
     ) as F:
         torch.save(best_model, F)
 
     with open(
-        "losses/%s_losses_%s_%s_%s.pt"
-        % (train_file_name, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
+        "outputs/%s/losses/%s_losses_%s_%s_%s.pt"
+        % (args.experiment_out_name, train_file_name, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
         "wb",
     ) as F:
         pickle.dump(losses, F)
 
     with open(
-        "accuracies/%s_accuracies_%s_%s_%s.pt"
-        % (train_file_name, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
+        "outputs/%s/accuracies/%s_accuracies_%s_%s_%s.pt"
+        % (args.experiment_out_name, train_file_name, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
         "wb",
     ) as F:
         pickle.dump(accuracies, F)
 else:
     with open(
-        "saved_models/%s_%s_model_%s_%s_%s.pt"
-        % (train_file_name, TASK, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
+        "outputs/%s/saved_models/%s_%s_model_%s_%s_%s.pt"
+        % (args.experiment_out_name, train_file_name, TASK, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
         "wb",
     ) as F:
         torch.save(best_model, F)
 
     with open(
-        "losses/%s_%s_losses_%s_%s_%s.pt"
-        % (train_file_name, TASK, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
+        "outputs/%s/losses/%s_%s_losses_%s_%s_%s.pt"
+        % (args.experiment_out_name, train_file_name, TASK, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
         "wb",
     ) as F:
         pickle.dump(losses, F)
 
     with open(
-        "accuracies/%s_%s_accuracies_%s_%s_%s.pt"
-        % (train_file_name, TASK, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
+        "outputs/%s/accuracies/%s_%s_accuracies_%s_%s_%s.pt"
+        % (args.experiment_out_name, train_file_name, TASK, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
         "wb",
     ) as F:
         pickle.dump(accuracies, F)
@@ -349,15 +350,17 @@ for phase in ["test"]:
 
 if TASK == "combined":
     with open(
-        "accuracies/%s_test_accuracies_%s_%s_%s.pt"
-        % (train_file_name, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
+        "outputs/%s/accuracies/%s_test_accuracies_%s_%s_%s.pt"
+        % (args.experiment_out_name, train_file_name, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
         "wb",
     ) as F:
         pickle.dump(test_epoch_accs, F)
 else:
     with open(
-        "accuracies/%s_%s_test_accuracies_%s_%s_%s.pt"
-        % (train_file_name, TASK, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
+        "outputs/%s/accuracies/%s_%s_test_accuracies_%s_%s_%s.pt"
+        % (args.experiment_out_name, train_file_name, TASK, ARCH, DATASET_NAME, SAVE_FILE_SUFFIX),
         "wb",
     ) as F:
         pickle.dump(test_epoch_accs, F)
+
+print('Job completed.')
