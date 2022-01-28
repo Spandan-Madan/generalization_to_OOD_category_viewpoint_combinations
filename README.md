@@ -38,12 +38,14 @@ We show that increasing the number of in-distribution combinations (ie. data div
 
 2. DATASETS:
 
-    a. Downloading: For every dataset, there is a download script under `utils`. Please use:
+    a. Downloading: For every dataset, there is a download script under `utils`. Bised-Cars can be downloaded using:
 
     ```
     cd utils
     bash download_biased_cars.sh
     ```
+    For other datasets, please use other scripts in the `utils` directory.
+
     b. Understanding data structure:
 
 3. DEMOS: We provide easy demos which showcase our main experiments. These include:
