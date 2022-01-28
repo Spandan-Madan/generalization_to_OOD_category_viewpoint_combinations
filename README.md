@@ -60,6 +60,17 @@ We show that increasing the number of in-distribution combinations (ie. data div
 
 4. TRAINING:
 
+    `train.py` is the entry point to allow training across iLab, Biased-Cars and MNIST-Rotation datasets. Below is an example to run the `Shared` architecture on the Biased-Cars dataset with 60% in-distribution combinations.
+
+    ```
+    python train.py --dataset_name rotation_model_15_compositions_seen --num_epochs 5 --batch_size 50 --arch LATE_BRANCHING_COMBINED --save_file_suffix test_run --task rotation --experiment_out_name biased_cars_test
+    ```
+
+
+5. Additional Details:
+
+    All datasets are loaded from file lists located in the `dataset_lists` directory. The names describe the number of in-distribution combinations. These come in triplets with the `train_list`, `test_list` and `val_list`.
+
 # Datasets
 
 ## Biased-Cars: A photo-realistic, complex dataset for OOD generalization
