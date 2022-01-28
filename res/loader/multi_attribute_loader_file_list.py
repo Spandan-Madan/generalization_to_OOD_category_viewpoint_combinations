@@ -13,7 +13,7 @@ import torch
 project_root = os.getcwd()
 data_root = "%s/data"%project_root
 
-def make_dataset(list_file):
+def make_dataset(list_file, data_dir):
         images = []
         labels = []
 
@@ -22,7 +22,7 @@ def make_dataset(list_file):
 
         for line in lines:
             image = line.rstrip()
-            images.append("%s/%s"%(data_root,image))
+            images.append("%s/%s"%(data_dir,image))
             label = image.replace('images/frame','labels/label_frame')
             labels.append(label)
 
@@ -30,8 +30,8 @@ def make_dataset(list_file):
         return images, labels
 
 class FileListFolder(data.Dataset):
-    def __init__(self, file_list, attributes_dict, transform):
-        samples,targets  = make_dataset(file_list)
+    def __init__(self, file_list, attributes_dict, transform, data_dir):
+        samples,targets  = make_dataset(file_list, data_dir)
 
         if len(samples) == 0:
             raise(RuntimeError("Found 0 samples"))
