@@ -56,6 +56,8 @@ We show that increasing the number of in-distribution combinations (ie. data div
 
     c. Analyzing role of Neural Specialization in facilitating generalization: [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/neural_activity.ipynb)
 
+    d. Loading, training and testing on biased cars dataset: [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/using_biased_cars.ipynb)
+
 4. TRAINING:
 
 # Datasets
