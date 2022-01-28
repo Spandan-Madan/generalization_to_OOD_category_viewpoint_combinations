@@ -27,10 +27,23 @@ unzip biased_cars_2.zip
 unzip biased_cars_3.zip
 unzip biased_cars_4.zip
 
-echo 'moving files to correct directories'
+echo 'moving files to correct directories...'
 mv biased_cars_1/* ./ 
 mv biased_cars_2/* ./
 mv biased_cars_3/* ./
 mv biased_cars_4/* ./
+
+echo 'Removing unwanted files...'
+
+rm -r biased_cars_1
+rm -r biased_cars_2
+rm -r biased_cars_3
+rm -r biased_cars_4
+rm biased_cars_1.zip
+rm biased_cars_2.zip
+rm biased_cars_3.zip
+rm biased_cars_4.zip
+
+rm -r __MACOSX
 
 echo 'All done!'
