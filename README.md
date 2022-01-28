@@ -48,8 +48,11 @@ We show that increasing the number of in-distribution combinations (ie. data div
 
 3. DEMOS: We provide easy demos which showcase our main experiments. These include:
 
-    a. Impact of increasing data diversity on out-of-distribution performance:[LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/increasing_in_distribution_combinations.ipynb)
+    a. Impact of increasing data diversity on out-of-distribution (OOD) performance: [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/increasing_in_distribution_combinations.ipynb)
+    b. Performance of `Separate` vs `Shared` architectures on in-distribution and OOD performance: [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/separate_vs_shared.ipynb)
+    c. Analyzing role of Neural Specialization in facilitating generalization: [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/neural_activity.ipynb)
 
+4. TRAINING:
 # Findings
 
 Our key findings are as follows:
