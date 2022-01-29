@@ -58,6 +58,8 @@ We show that increasing the number of in-distribution combinations (ie. data div
 
     d. Loading, training and testing on biased cars dataset: [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/using_biased_cars.ipynb)
 
+    e. Loading semantic segmentation maps for biased cars dataset (not used in the paper, but provided): [LINK](https://github.com/Spandan-Madan/generalization_to_OOD_category_viewpoint_cominations/blob/main/demos/biased_cars_semantic_segmentation.ipynb)
+
 4. TRAINING:
 
     `train.py` is the entry point to allow training across iLab, Biased-Cars and MNIST-Rotation datasets. Below is an example to run the `Shared` architecture on the Biased-Cars dataset with 60% in-distribution combinations.
