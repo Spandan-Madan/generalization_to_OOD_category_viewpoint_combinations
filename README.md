@@ -10,7 +10,7 @@
 
 This repository contains the official implementation of our paper published in Nature Machine Intelligence: *When and how convolutional neural networks generalize to out-of-distribution category and viewpoint combinations*. Here you can find the code, and the newly introduced Biased-Cars dataset.
 
-The paper can be accessed [here](https://arxiv.org/abs/2007.08032).
+The paper can be accessed [here](https://www.nature.com/articles/s42256-021-00437-5).
 
 <div align="center">
 <h3>Authors</h3>
