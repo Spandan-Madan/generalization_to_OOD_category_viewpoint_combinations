@@ -109,12 +109,27 @@ Our paper also provides results with the following public datasets:
 To cite our paper, please use the following bibTex:
 
 ```
-@misc{madan2021cnns,
-      title={When and how CNNs generalize to out-of-distribution category-viewpoint combinations},
-      author={Spandan Madan and Timothy Henry and Jamell Dozier and Helen Ho and Nishchal Bhandari and Tomotake Sasaki and Frédo Durand and Hanspeter Pfister and Xavier Boix},
-      year={2021},
-      eprint={2007.08032},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@Article{Madan2022,
+author={Madan, Spandan
+and Henry, Timothy
+and Dozier, Jamell
+and Ho, Helen
+and Bhandari, Nishchal
+and Sasaki, Tomotake
+and Durand, Fr{\'e}do
+and Pfister, Hanspeter
+and Boix, Xavier},
+title={When and how convolutional neural networks generalize to out-of-distribution category--viewpoint combinations},
+journal={Nature Machine Intelligence},
+year={2022},
+month={Feb},
+day={01},
+volume={4},
+number={2},
+pages={146-153},
+abstract={Object recognition and viewpoint estimation lie at the heart of visual understanding. Recent studies have suggested that convolutional neural networks (CNNs) fail to generalize to out-of-distribution (OOD) category--viewpoint combinations, that is, combinations not seen during training. Here we investigate when and how such OOD generalization may be possible by evaluating CNNs trained to classify both object category and three-dimensional viewpoint on OOD combinations, and identifying the neural mechanisms that facilitate such OOD generalization. We show that increasing the number of in-distribution combinations (data diversity) substantially improves generalization to OOD combinations, even with the same amount of training data. We compare learning category and viewpoint in separate and shared network architectures, and observe starkly different trends on in-distribution and OOD combinations, that is, while shared networks are helpful in distribution, separate networks significantly outperform shared ones at OOD combinations. Finally, we demonstrate that such OOD generalization is facilitated by the neural mechanism of specialization, that is, the emergence of two types of neuron---neurons selective to category and invariant to viewpoint, and vice versa.},
+issn={2522-5839},
+doi={10.1038/s42256-021-00437-5},
+url={https://doi.org/10.1038/s42256-021-00437-5}
 }
 ```
